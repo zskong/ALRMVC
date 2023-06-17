@@ -58,7 +58,7 @@ for iu = 1:numview
     %% optimize C
 options = optimset( 'Algorithm','interior-point-convex','Display','off'); % Algorithm 默认为 interior-point-convex
 
-for ji=1:numsample
+parfor ji=1:numsample
     ff=0;H=0;
     for j=1:numview
         HH =(alpha(ia)^2)* U{j}'*U{j};
